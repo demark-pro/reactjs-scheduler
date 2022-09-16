@@ -4,7 +4,12 @@ import { createArrayOfDays } from "./helpers";
 
 import styles from "./Scheduler.module.css";
 
-export default function Scheduler({ startDate, endDate }) {
+export default function Scheduler({
+  startDate,
+  endDate,
+  colWidth = 50,
+  colHeight = 50,
+}) {
   const containerRef = createRef(null);
 
   const [days, setDays] = useState(null);
@@ -20,8 +25,11 @@ export default function Scheduler({ startDate, endDate }) {
 
     for (const day of days) {
       finishDays.push(
-        <div className={styles.header_day}>
-          <span>{format(day.date, "dd")}</span>
+        <div
+          className={styles.header_day}
+          style={{ height: colHeight, width: colWidth }}
+        >
+          <span>{format(day.date, "d")}</span>
           <p>{format(day.date, "MMM")}</p>
         </div>
       );
