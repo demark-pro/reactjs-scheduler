@@ -91,9 +91,9 @@ export default function Scheduler({
 
       <div className={styles.rightside}>
         <div className={styles.header}>{renderHeader()}</div>
-        <div className={styles.cols}>
+        <div className={styles.rows}>
           {groups.map((group) => (
-            <div className={styles.col}>{renderCols(group)}</div>
+            <div className={styles.row}>{renderCols(group)}</div>
           ))}
         </div>
       </div>

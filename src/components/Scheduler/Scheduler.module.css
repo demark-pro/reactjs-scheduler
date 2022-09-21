@@ -12,6 +12,13 @@
   border-top: 1px solid #ccc;
 }
 
+.container .leftside {
+  position: sticky;
+  left: 0;
+  background: #fff;
+  box-shadow: 1px 0px 12px 0px #e4e3e3;
+}
+
 .container .rightside {
   border-right: 1px solid #ccc;
 }
@@ -21,11 +28,11 @@
 }
 
 .header,
-.cols .col {
+.rows .row {
   display: inline-flex;
 }
 
-.cols {
+.rows {
   display: flex;
   flex-direction: column;
 }
