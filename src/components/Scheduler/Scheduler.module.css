@@ -1,14 +1,25 @@
 .container {
   width: 100%;
+  overflow-x: scroll;
 }
 
-.header {
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.header,
+.cols {
   display: inline-flex;
 }
 
 .header .header_day {
-  border-left: 1px solid #ccc;
   border-top: 1px solid #ccc;
+  background-color: #f7f7f7;
+}
+
+.header .header_day,
+.cols .cols_day {
+  border-left: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   display: flex;
   flex-direction: column;
@@ -16,7 +27,8 @@
   justify-content: center;
 }
 
-.header .header_day:last-child {
+.header .header_day:last-child,
+.cols .cols_day:last-child {
   border-right: 1px solid #ccc;
 }
 

@@ -7,6 +7,8 @@ import styles from "./Scheduler.module.css";
 export default function Scheduler({
   startDate,
   endDate,
+  groups,
+  items,
   colWidth = 50,
   colHeight = 50,
 }) {
@@ -43,7 +45,18 @@ export default function Scheduler({
   };
 
   const renderCols = () => {
-    return <></>;
+    const finishDays = [];
+
+    for (const day of days) {
+      finishDays.push(
+        <div
+          className={styles.cols_day}
+          style={{ height: colHeight, width: colWidth }}
+        ></div>
+      );
+    }
+
+    return finishDays;
   };
 
   if (!days) return <p>Loading ...</p>;
