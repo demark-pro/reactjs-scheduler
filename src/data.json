@@ -16,9 +16,31 @@
     "items": [
         {
             "groupId": 1,
-            "startDate": 1663837989,
-            "endDate": 1663837989,
+            "uid": 1,
+            "startDate": 1664045221000,
+            "endDate": 1664304421000,
             "title": "Item 1"
+        },
+        {
+            "groupId": 1,
+            "uid": 2,
+            "startDate": 1664131621000,
+            "endDate": 1664218021000,
+            "title": "Item 2"
+        },
+        {
+            "groupId": 1,
+            "uid": 3,
+            "startDate": 1664390821000,
+            "endDate": 1664563621000,
+            "title": "Item 3"
+        },
+        {
+            "groupId": 1,
+            "uid": 4,
+            "startDate": 1663872421000,
+            "endDate": 1664563621000,
+            "title": "Item 4"
         }
     ]
 }

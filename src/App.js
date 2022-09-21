@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <Scheduler
-        startDate={new Date()}
-        endDate={addDays(new Date(), 30)}
+        startDate={new Date().getTime()}
+        endDate={addDays(new Date(), 30).getTime()}
         groups={data.groups}
         items={data.items}
       />

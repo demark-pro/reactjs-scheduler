@@ -17,10 +17,12 @@
   left: 0;
   background: #fff;
   box-shadow: 1px 0px 12px 0px #e4e3e3;
+  z-index: 2;
 }
 
 .container .rightside {
   border-right: 1px solid #ccc;
+  z-index: 1;
 }
 
 .container::-webkit-scrollbar {
@@ -30,11 +32,25 @@
 .header,
 .rows .row {
   display: inline-flex;
+  position: relative;
 }
 
 .rows {
   display: flex;
   flex-direction: column;
+}
+
+.item {
+  position: absolute;
+  background: #03a9f4b5;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.item .item_content {
+  display: flex;
+  font-size: 0.9rem;
+  padding-left: 0.25rem;
 }
 
 /* .header .header_day {
