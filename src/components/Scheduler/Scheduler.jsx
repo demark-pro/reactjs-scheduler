@@ -17,7 +17,6 @@ export default function Scheduler({
   items,
   colWidth = 50,
   colHeight = 55,
-  groupsColWidth = 100,
   handleDayClick,
   handleGroupClick,
   handleItemClick,
@@ -139,7 +138,9 @@ export default function Scheduler({
   return (
     <div ref={containerRef} className={styles.container}>
       <div className={styles.leftside}>
-        <Col style={{ width: groupsColWidth, height: colHeight }}>Month</Col>
+        <Col className={styles.group} style={{ height: colHeight }}>
+          Month
+        </Col>
         <div className={styles.groups}>{renderGroups()}</div>
       </div>
 

@@ -40,6 +40,11 @@
   flex-direction: column;
 }
 
+.group {
+  padding: 0 1rem;
+  white-space: nowrap;
+}
+
 .item {
   position: absolute;
   background: #03a9f4b5;
@@ -53,11 +58,6 @@
   padding-left: 0.25rem;
 }
 
-/* .header .header_day {
-  border-top: 1px solid #ccc;
-  background-color: #f7f7f7;
-} */
-
 .template_col {
   border-left: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -66,11 +66,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* .header .header_day:last-child,
-.cols .cols_day:last-child {
-  border-right: 1px solid #ccc;
-} */
 
 .header .header_day span,
 .header .header_day p {
