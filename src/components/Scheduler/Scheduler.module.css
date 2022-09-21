@@ -1,6 +1,19 @@
 .container {
   width: 100%;
   overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+}
+
+.container .leftside,
+.container .rightside {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #ccc;
+}
+
+.container .rightside {
+  border-right: 1px solid #ccc;
 }
 
 .container::-webkit-scrollbar {
@@ -8,17 +21,21 @@
 }
 
 .header,
-.cols {
+.cols .col {
   display: inline-flex;
 }
 
-.header .header_day {
-  border-top: 1px solid #ccc;
-  background-color: #f7f7f7;
+.cols {
+  display: flex;
+  flex-direction: column;
 }
 
-.header .header_day,
-.cols .cols_day {
+/* .header .header_day {
+  border-top: 1px solid #ccc;
+  background-color: #f7f7f7;
+} */
+
+.template_col {
   border-left: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   display: flex;
@@ -27,10 +44,10 @@
   justify-content: center;
 }
 
-.header .header_day:last-child,
+/* .header .header_day:last-child,
 .cols .cols_day:last-child {
   border-right: 1px solid #ccc;
-}
+} */
 
 .header .header_day span,
 .header .header_day p {

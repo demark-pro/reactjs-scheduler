@@ -4,6 +4,12 @@ import { createArrayOfDays } from "./helpers";
 
 import styles from "./Scheduler.module.css";
 
+const Col = ({ children, className, ...props }) => (
+  <div className={`${styles.template_col} ${className}`} {...props}>
+    {children}
+  </div>
+);
+
 export default function Scheduler({
   startDate,
   endDate,
@@ -11,6 +17,7 @@ export default function Scheduler({
   items,
   colWidth = 50,
   colHeight = 50,
+  groupsColWidth = 100,
 }) {
   const containerRef = createRef(null);
 
@@ -22,37 +29,49 @@ export default function Scheduler({
     setDays(createArrayOfDays(startDate, endDate));
   }, [startDate, endDate]);
 
+  // header
   const renderHeader = () => {
     const finishDays = [];
 
     for (const day of days) {
       finishDays.push(
-        <div
+        <Col
           className={styles.header_day}
           style={{ height: colHeight, width: colWidth }}
         >
           <span>{format(day.date, "d")}</span>
           <p>{format(day.date, "MMM")}</p>
-        </div>
+        </Col>
       );
     }
 
     return finishDays;
   };
 
+  // groups
   const renderGroups = () => {
-    return <></>;
+    if (!groups) return;
+
+    const finishGroups = [];
+
+    for (const group of groups) {
+      finishGroups.push(
+        <Col className={styles.group} style={{ height: colHeight }} />
+      );
+    }
+    return finishGroups;
   };
 
+  // cols
   const renderCols = () => {
     const finishDays = [];
 
     for (const day of days) {
       finishDays.push(
-        <div
+        <Col
           className={styles.cols_day}
           style={{ height: colHeight, width: colWidth }}
-        ></div>
+        />
       );
     }
 
@@ -63,9 +82,19 @@ export default function Scheduler({
 
   return (
     <div ref={containerRef} className={styles.container}>
-      <div className={styles.header}>{renderHeader()}</div>
-      <div className={styles.groups}>{renderGroups()}</div>
-      <div className={styles.cols}>{renderCols()}</div>
+      <div className={styles.leftside}>
+        <Col style={{ width: groupsColWidth, height: colHeight }}>123</Col>
+        <div className={styles.groups}>{renderGroups()}</div>
+      </div>
+
+      <div className={styles.rightside}>
+        <div className={styles.header}>{renderHeader()}</div>
+        <div className={styles.cols}>
+          {groups.map((group) => (
+            <div className={styles.col}>{renderCols(group)}</div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
