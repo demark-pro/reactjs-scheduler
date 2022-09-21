@@ -56,7 +56,9 @@ export default function Scheduler({
 
     for (const group of groups) {
       finishGroups.push(
-        <Col className={styles.group} style={{ height: colHeight }} />
+        <Col className={styles.group} style={{ height: colHeight }}>
+          <p>{group.title}</p>
+        </Col>
       );
     }
     return finishGroups;
@@ -83,7 +85,7 @@ export default function Scheduler({
   return (
     <div ref={containerRef} className={styles.container}>
       <div className={styles.leftside}>
-        <Col style={{ width: groupsColWidth, height: colHeight }}>123</Col>
+        <Col style={{ width: groupsColWidth, height: colHeight }}>Month</Col>
         <div className={styles.groups}>{renderGroups()}</div>
       </div>
 
