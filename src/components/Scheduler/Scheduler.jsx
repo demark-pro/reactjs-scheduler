@@ -79,7 +79,7 @@ export default function Scheduler({
         <Col
           className={styles.cols_day}
           style={{ height: colHeight, width: colWidth }}
-          onClick={() => onDayClick(day)}
+          onClick={() => onDayClick(day.date)}
         />
       );
     }
@@ -126,7 +126,7 @@ export default function Scheduler({
   };
 
   const onGroupClick = (group) => {
-    if (handleGroupClick) handleGroupClick(groups);
+    if (handleGroupClick) handleGroupClick(group);
   };
 
   const onItemClick = (item) => {
